@@ -14,6 +14,7 @@
 @property (strong,nonatomic) UIViewController *grayVC;
 @property (strong,nonatomic) UIViewController *currentVC;
 @property (assign,nonatomic) BOOL burgerMenuOn;
+@property (strong,nonatomic) NSArray *aList;
 
 
 @property (assign, nonatomic) UIButton *burgerButton;
@@ -60,6 +61,7 @@
     [self.grayVC.view setBackgroundColor:[UIColor colorWithRed:152.0f/255.0f green:147.0f/255.0f blue:147.0f/255.0f alpha:1.0]];
     self.burgerMenuOn = NO;
     
+    self.aList = [NSArray arrayWithObjects:@"Leonardo Dicaprio",@"Jack Nicholson",@"Johnny Depp",@"James Franco", nil];
 
 }
 
@@ -84,7 +86,12 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (self.aList.count != 0) {
+        return self.aList.count;
+    }
+    else {
+        return 0;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,10 +101,13 @@
     
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyCellIdentifier];
+        cell.textLabel.text = self.aList[indexPath.row];
     }
     
     return cell;
 }
+
+
 
 
 
