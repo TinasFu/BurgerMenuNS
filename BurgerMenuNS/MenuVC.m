@@ -12,12 +12,14 @@
 @interface MenuVC ()
 
 @property (strong,nonatomic) UIViewController *grayVC;
-@property (strong,nonatomic) UIViewController *currentVC;
 @property (assign,nonatomic) BOOL burgerMenuOn;
+@property (assign,nonatomic) BOOL detailOn;
 @property (strong,nonatomic) NSArray *aList;
 
 
 @property (assign, nonatomic) UIButton *burgerButton;
+@property (strong, nonatomic) UILabel *grayVCLabel;
+@property (strong, nonatomic) UILabel *grayVCMoneyLabel;
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
@@ -43,6 +45,7 @@
 //    [self.view addConstraint:constraint];
     
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
 
     self.burgerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -60,6 +63,7 @@
     [self.grayVC didMoveToParentViewController:self];
     [self.grayVC.view setBackgroundColor:[UIColor colorWithRed:152.0f/255.0f green:147.0f/255.0f blue:147.0f/255.0f alpha:1.0]];
     self.burgerMenuOn = NO;
+    self.detailOn = NO;
     
     self.aList = [NSArray arrayWithObjects:@"Leonardo Dicaprio",@"Jack Nicholson",@"Johnny Depp",@"James Franco", nil];
 
@@ -69,10 +73,18 @@
     
     [UIView animateWithDuration:0.4 animations:^{
         
-        if (self.burgerMenuOn == NO) {
+        if (self.burgerMenuOn == NO && self.detailOn == NO) {
             self.grayVC.view.frame = CGRectMake(self.view.frame.size.width * .8, 0, self.view.frame.size.width, self.view.frame.size.height);
             self.burgerMenuOn = YES;
         }
+        else if (self.burgerMenuOn == NO && self.detailOn == YES) {
+            [self.grayVCLabel removeFromSuperview];
+            [self.grayVCMoneyLabel removeFromSuperview];
+            self.grayVC.view.frame = CGRectMake(self.view.frame.size.width * .8, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.burgerMenuOn = YES;
+            //self.detailOn = NO;
+        }
+
         else {
             self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             self.burgerMenuOn = NO;
@@ -95,7 +107,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyCellIdentifier = @"MyCellIdentifier";
+    static NSString *MyCellIdentifier = @"AListCell";
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
     
@@ -105,6 +117,102 @@
     }
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.aList[indexPath.row] isEqualToString:@"Leonardo Dicaprio"]) {
+        [UIView animateWithDuration:0.4 animations:^{
+            
+            self.grayVCLabel = [[UILabel alloc]init];
+            self.grayVCLabel.frame = CGRectMake(10, 100, 350, 30);
+            [self.view addSubview:self.grayVCLabel];
+            
+            self.grayVCMoneyLabel = [[UILabel alloc]init];
+            self.grayVCMoneyLabel.frame = CGRectMake(10, 150, 350, 30);
+            [self.view addSubview:self.grayVCMoneyLabel];
+            
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.burgerMenuOn = NO;
+            self.detailOn = YES;
+            
+            
+        } completion:^(BOOL finished) {
+            self.grayVCLabel.text = @"Leonardo Dicaprio's Net Worth:";
+            self.grayVCMoneyLabel.text = @"$220 Million";
+        }];
+
+    }
+    else if ([self.aList[indexPath.row] isEqualToString:@"Jack Nicholson"]) {
+        [UIView animateWithDuration:0.4 animations:^{
+            
+            self.grayVCLabel = [[UILabel alloc]init];
+            self.grayVCLabel.frame = CGRectMake(10, 100, 350, 30);
+            [self.view addSubview:self.grayVCLabel];
+            
+            self.grayVCMoneyLabel = [[UILabel alloc]init];
+            self.grayVCMoneyLabel.frame = CGRectMake(10, 150, 350, 30);
+            [self.view addSubview:self.grayVCMoneyLabel];
+            
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.burgerMenuOn = NO;
+            self.detailOn = YES;
+            
+            
+        } completion:^(BOOL finished) {
+            self.grayVCLabel.text = @"Jack Nicholson's Net Worth:";
+            self.grayVCMoneyLabel.text = @"$400 Million";
+        }];
+        
+    }
+    else if ([self.aList[indexPath.row] isEqualToString:@"Johnny Depp"]) {
+        [UIView animateWithDuration:0.4 animations:^{
+            
+            self.grayVCLabel = [[UILabel alloc]init];
+            self.grayVCLabel.frame = CGRectMake(10, 100, 350, 30);
+            [self.view addSubview:self.grayVCLabel];
+            
+            self.grayVCMoneyLabel = [[UILabel alloc]init];
+            self.grayVCMoneyLabel.frame = CGRectMake(10, 150, 350, 30);
+            [self.view addSubview:self.grayVCMoneyLabel];
+            
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.burgerMenuOn = NO;
+            self.detailOn = YES;
+            
+            
+        } completion:^(BOOL finished) {
+            self.grayVCLabel.text = @"Johnny Depp's Net Worth:";
+            self.grayVCMoneyLabel.text = @"$350 Million";
+        }];
+        
+    }
+    else if ([self.aList[indexPath.row] isEqualToString:@"James Franco"]) {
+        [UIView animateWithDuration:0.4 animations:^{
+            
+            self.grayVCLabel = [[UILabel alloc]init];
+            self.grayVCLabel.frame = CGRectMake(10, 100, 350, 30);
+            [self.view addSubview:self.grayVCLabel];
+            
+            self.grayVCMoneyLabel = [[UILabel alloc]init];
+            self.grayVCMoneyLabel.frame = CGRectMake(10, 150, 350, 30);
+            [self.view addSubview:self.grayVCMoneyLabel];
+            
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.grayVC.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.burgerMenuOn = NO;
+            self.detailOn = YES;
+            
+            
+        } completion:^(BOOL finished) {
+            self.grayVCLabel.text = @"James Franco's Net Worth:";
+            self.grayVCMoneyLabel.text = @"$20 Million";
+        }];
+        
+    }
+
 }
 
 

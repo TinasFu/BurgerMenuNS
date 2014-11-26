@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuVC: UIViewController <UITableViewDataSource>
+@interface MenuVC: UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 
 @end
