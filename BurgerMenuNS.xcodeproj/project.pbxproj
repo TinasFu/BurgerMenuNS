@@ -10,11 +10,11 @@
 		9226951F1A2548AD0057B694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9226951E1A2548AD0057B694 /* main.m */; };
 		922695221A2548AD0057B694 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922695211A2548AD0057B694 /* AppDelegate.m */; };
 		922695251A2548AD0057B694 /* BurgerMenuNS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922695231A2548AD0057B694 /* BurgerMenuNS.xcdatamodeld */; };
-		922695281A2548AD0057B694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922695271A2548AD0057B694 /* ViewController.m */; };
-		9226952B1A2548AD0057B694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922695291A2548AD0057B694 /* Main.storyboard */; };
+		922695281A2548AD0057B694 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 922695271A2548AD0057B694 /* MenuVC.m */; };
 		9226952D1A2548AD0057B694 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9226952C1A2548AD0057B694 /* Images.xcassets */; };
-		922695301A2548AD0057B694 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9226952E1A2548AD0057B694 /* LaunchScreen.xib */; };
 		9226953C1A2548AE0057B694 /* BurgerMenuNSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9226953B1A2548AE0057B694 /* BurgerMenuNSTests.m */; };
+		922695461A254E6F0057B694 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 922695451A254E6F0057B694 /* Default-568h@2x.png */; };
+		9226954B1A25631E0057B694 /* burgerButton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9226954A1A25631E0057B694 /* burgerButton.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +34,14 @@
 		922695201A2548AD0057B694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		922695211A2548AD0057B694 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		922695241A2548AD0057B694 /* BurgerMenuNS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BurgerMenuNS.xcdatamodel; sourceTree = "<group>"; };
-		922695261A2548AD0057B694 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		922695271A2548AD0057B694 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9226952A1A2548AD0057B694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		922695261A2548AD0057B694 /* MenuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuVC.h; sourceTree = "<group>"; };
+		922695271A2548AD0057B694 /* MenuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
 		9226952C1A2548AD0057B694 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9226952F1A2548AD0057B694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		922695351A2548AE0057B694 /* BurgerMenuNSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BurgerMenuNSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9226953A1A2548AE0057B694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9226953B1A2548AE0057B694 /* BurgerMenuNSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BurgerMenuNSTests.m; sourceTree = "<group>"; };
+		922695451A254E6F0057B694 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9226954A1A25631E0057B694 /* burgerButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = burgerButton.jpg; path = ../../../../Downloads/burgerButton.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +65,7 @@
 		922695101A2548AD0057B694 = {
 			isa = PBXGroup;
 			children = (
+				922695451A254E6F0057B694 /* Default-568h@2x.png */,
 				9226951B1A2548AD0057B694 /* BurgerMenuNS */,
 				922695381A2548AE0057B694 /* BurgerMenuNSTests */,
 				9226951A1A2548AD0057B694 /* Products */,
@@ -85,11 +86,9 @@
 			children = (
 				922695201A2548AD0057B694 /* AppDelegate.h */,
 				922695211A2548AD0057B694 /* AppDelegate.m */,
-				922695261A2548AD0057B694 /* ViewController.h */,
-				922695271A2548AD0057B694 /* ViewController.m */,
-				922695291A2548AD0057B694 /* Main.storyboard */,
+				922695261A2548AD0057B694 /* MenuVC.h */,
+				922695271A2548AD0057B694 /* MenuVC.m */,
 				9226952C1A2548AD0057B694 /* Images.xcassets */,
-				9226952E1A2548AD0057B694 /* LaunchScreen.xib */,
 				922695231A2548AD0057B694 /* BurgerMenuNS.xcdatamodeld */,
 				9226951C1A2548AD0057B694 /* Supporting Files */,
 			);
@@ -99,6 +98,7 @@
 		9226951C1A2548AD0057B694 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9226954A1A25631E0057B694 /* burgerButton.jpg */,
 				9226951D1A2548AD0057B694 /* Info.plist */,
 				9226951E1A2548AD0057B694 /* main.m */,
 			);
@@ -202,9 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9226952B1A2548AD0057B694 /* Main.storyboard in Resources */,
-				922695301A2548AD0057B694 /* LaunchScreen.xib in Resources */,
 				9226952D1A2548AD0057B694 /* Images.xcassets in Resources */,
+				922695461A254E6F0057B694 /* Default-568h@2x.png in Resources */,
+				9226954B1A25631E0057B694 /* burgerButton.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +224,7 @@
 			files = (
 				922695251A2548AD0057B694 /* BurgerMenuNS.xcdatamodeld in Sources */,
 				922695221A2548AD0057B694 /* AppDelegate.m in Sources */,
-				922695281A2548AD0057B694 /* ViewController.m in Sources */,
+				922695281A2548AD0057B694 /* MenuVC.m in Sources */,
 				9226951F1A2548AD0057B694 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,25 +246,6 @@
 			targetProxy = 922695361A2548AE0057B694 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		922695291A2548AD0057B694 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9226952A1A2548AD0057B694 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9226952E1A2548AD0057B694 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9226952F1A2548AD0057B694 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9226953D1A2548AE0057B694 /* Debug */ = {
